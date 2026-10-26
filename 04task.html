@@ -1,0 +1,287 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job and Internship Application Portal</title>
+</head>
+<body>
+    <header>
+        <h1>Job and Internship Application Portal</h1>
+        <p>Apply for an opportunity and take the next step in your career.</p>
+        <p><strong>Application Progress:</strong></p>
+        <progress value="3" max="5">60%</progress>
+        <p>Step 3 of 5 completed (example progress).</p>
+    </header>
+    <hr>
+    <main>
+        <section id="introduction">
+            <h2>About the Application</h2>
+            <p>
+                Welcome! Complete this form to apply for a job or internship.
+                Fields marked as required must be completed.
+            </p>
+            <p>
+                <b>Important:</b> Review your information before submitting.
+                <i>Make sure your contact details are correct.</i>
+            </p>
+            <p>
+                <del>Minimum experience required: 2 years.</del>
+                <ins>Fresh graduates can also apply.</ins>
+            </p>
+            <p>
+                The application status is currently
+                <s>Closed</s> Open for demonstration purposes.
+            </p>
+        </section>
+        <hr>
+        <section id="application-form">
+            <h2>Application Form</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="application_code" value="APP-2026-001">
+                <fieldset>
+                    <legend>Applicant Details</legend>
+                    <p>
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Enter first name" minlength="2" maxlength="30" autocomplete="given-name" required>
+                    </p>
+                    <p>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Enter last name" minlength="2" maxlength="30"autocomplete="family-name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" required>
+                    </p>
+                    <p>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+923001234567" pattern="[+]?[0-9]{10,15}" title="Enter 10 to 15 digits, optionally starting with +" autocomplete="tel" required>
+                    </p>
+                    <p>
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="date_of_birth" min="1950-01-01" max="2010-12-31" required>
+                    </p>
+                    <p>
+                        <label for="interview">Preferred Interview Date and Time:</label>
+                        <input type="datetime-local" id="interview" name="interview_datetime" required>
+                    </p>
+                    <p>
+                        <label for="application-id">Application ID:</label>
+                        <input type="text" id="application-id" name="application_id" value="APP-2026-001" readonly>
+                    </p>
+                    <p>
+                        <label for="account-status">Account Status:</label>
+                        <input type="text" id="account-status" value="Not available yet" disabled>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Job Preferences and Skills</legend>
+                    <p>
+                        <label for="position">Choose a Position:</label>
+                        <select id="position" name="position" required>
+                            <option value="" selected disabled>
+                                Select a position
+                            </option>
+                            <option value="ai-intern">AI Intern</option>
+                            <option value="web-intern">Web Development Intern</option>
+                            <option value="python-developer">Python Developer</option>
+                            <option value="cv-intern">Computer Vision Intern</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="skills">Primary Skill:</label>
+                        <input type="text" id="skills" name="primary_skill" list="skill-options" placeholder="Type or select a skill" required>
+                        <datalist id="skill-options">
+                            <option value="Python">
+                            <option value="HTML">
+                            <option value="SQL">
+                            <option value="Machine Learning">
+                            <option value="Computer Vision">
+                            <option value="C++">
+                        </datalist>
+                    </p>
+                    <p>
+                        <label for="skill-level">Rate Your Skill Level (0-10):</label>
+                        <input type="number" id="skill-level" name="skill_level" min="0" max="10" step="1" value="5">
+                    </p>
+                    <p>Example Skill Meter:</p>
+                    <meter min="0" max="10" low="3" high="7" optimum="10" value="7">
+                        7 out of 10
+                    </meter>
+                    <p>This meter shows a sample skill level of 7 out of 10.</p>
+                    <p>
+                        <label for="salary">Expected Monthly Salary (PKR):</label>
+                        <input type="number" id="salary" name="expected_salary" min="0" max="500000" step="5000" placeholder="Enter expected salary">
+                    </p>
+                    <p>
+                        <label for="portfolio">Portfolio URL:</label>
+                        <input type="url" id="portfolio" name="portfolio" placeholder="https://example.com" autocomplete="url">
+                    </p>
+                    <p>
+                        <label for="resume">Upload Resume (PDF or DOCX):</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
+                    </p>
+                    <p>
+                        <label for="documents">Additional Documents:</label>
+                        <input type="file" id="documents" name="documents" accept=".pdf,.docx,.jpg,.png" multiple>
+                    </p>
+                    <p>
+                        <label for="cover-letter">Cover Letter:</label><br>
+                        <textarea id="cover-letter" name="cover_letter" rows="5" cols="45" minlength="20" maxlength="1000" placeholder="Write at least 20 characters"></textarea>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Terms and Confirmation</legend>
+                    <p>
+                        <input type="checkbox" id="terms" name="terms" value="accepted" required>
+                        <label for="terms">
+                            I confirm that the information provided is accurate.
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="updates" name="updates" value="yes">
+                        <label for="updates">
+                            I would like to receive application updates.
+                        </label>
+                    </p>
+                </fieldset>
+                <br>
+                <input type="submit" value="Submit Application">
+                <input type="reset" value="Reset Form">
+                <input type="button" value="Check Application Status" title="Demonstration button; requires JavaScript for an action">
+
+                <p>Image submit button example:</p>
+                <input type="image" src="https://placehold.co/140x40/eeeeee/222222?text=Submit" alt="Submit application using image button" width="140" height="40">
+
+            </form>
+        </section>
+        <hr>
+        <section id="qualification">
+            <h2>Qualification Examples</h2>
+            <p>
+                Water is written as H<sub>2</sub>O using a subscript.
+            </p>
+            <p>
+                The equation x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup>
+                uses superscripts.
+            </p>
+            <p>
+                A <u>required qualification</u> is one that applicants must meet.
+            </p>
+        </section>
+        <hr>
+        <section id="language">
+            <h2>Language Examples</h2>
+            <p>
+                Applicant name with isolated text direction:
+                <bdi>علی</bdi> - English text continues normally.
+            </p>
+            <p>
+                Right-to-left override example:
+                <bdo dir="rtl">This text is displayed right to left.</bdo>
+            </p>
+        </section>
+        <hr>
+        <section id="drawing">
+            <h2>Canvas Example</h2>
+            <p>
+                The canvas element provides an area for drawing with JavaScript.
+                Without JavaScript, the example below remains an empty drawing area.
+            </p>
+            <canvas id="my-canvas" width="300" height="100">
+                Your browser does not support canvas.
+            </canvas>
+        </section>
+        <hr>
+        <section id="image-map">
+            <h2>Image Map Example</h2>
+            <p>
+                Click the marked area in the image to navigate to the contact section.
+            </p>
+            <img
+                src="https://placehold.co/400x150/eeeeee/222222?text=Click+the+Left+Side"
+                alt="Example image with a clickable area on the left" width="400" height="150" usemap="#application-map">
+
+            <map name="application-map">
+                <area shape="rect" coords="0,0,200,150" href="#contact" alt="Go to contact information">
+            </map>
+        </section>
+        <hr>
+        <section id="template-example">
+            <h2>Template Example</h2>
+            <p>
+                The template element stores HTML that is not displayed by default.
+                JavaScript would normally be used to clone and display it.
+            </p>
+            <template id="job-template">
+                <article>
+                    <h3>Example Job</h3>
+                    <p>This content is stored inside the template.</p>
+                </article>
+            </template>
+            <p>The job template is included in the HTML source but is not rendered.</p>
+        </section>
+        <hr>
+        <section id="output-example">
+            <h2>Output Example</h2>
+            <p>
+                The output element can display the result of a calculation.
+                Without JavaScript or another calculation mechanism, this example
+                shows a static result.
+            </p>
+            <form action="#">
+                <label for="number-one">First Number:</label>
+                <input type="number" id="number-one" value="10" readonly>
+
+                <label for="number-two">Second Number:</label>
+                <input type="number" id="number-two" value="20" readonly>
+
+                <p>
+                    Example result:
+                    <output name="result" for="number-one number-two">30</output>
+                </p>
+            </form>
+        </section>
+        <hr>
+        <section id="noscript-example">
+            <h2>Noscript Example</h2>
+            <noscript>
+                <p>
+                    JavaScript is disabled in your browser. Some interactive
+                    features on websites may not work.
+                </p>
+            </noscript>
+            <p>
+                This page is designed to demonstrate HTML without JavaScript.
+            </p>
+        </section>
+        <hr>
+        <aside>
+            <h2>Application Tips</h2>
+            <ul>
+                <li>Check your email and phone number before submitting.</li>
+                <li>Upload your resume in PDF or DOCX format.</li>
+                <li>Complete all required fields.</li>
+                <li>Use a valid portfolio URL if you have one.</li>
+            </ul>
+        </aside>
+    </main>
+    <hr>
+    <footer id="contact">
+        <h2>Contact Information</h2>
+        <address>
+            Recruitment Team<br>
+            Email:
+            <a href="mailto:careers@example.com">careers@example.com</a><br>
+            Website:
+            <a href="https://www.w3.org/" target="_blank" rel="noopener">
+                World Wide Web Consortium
+            </a>
+        </address>
+        <p><small>&copy; 2026 Job and Internship Application Portal.</small></p>
+    </footer>
+</body>
+</html>
